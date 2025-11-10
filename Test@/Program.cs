@@ -122,6 +122,7 @@ class Program
                     Test4_4(path);
                     break;
                 case 5:
+                    Console.WriteLine("文件地址：" + Path.GetFullPath(path));
                     break;
                 default:
                     Console.WriteLine("无效的选择。");
@@ -143,7 +144,7 @@ class Program
         var lines = File.ReadAllLines(path).ToList() ;
         if(lines.Any(e => e.StartsWith(name + ",")))
         {
-            Console.WriteLine("该姓名已存在，无法重复登记。");
+            Console.WriteLine("该姓名已存在，无法重复登记");
             Test4();
             return;
         }
@@ -154,7 +155,7 @@ class Program
         {
             if (age < 0 || age > 1200)
             {
-                Console.WriteLine("年龄输入无效，请输入0-1200之间的数字。");
+                Console.WriteLine("年龄输入无效，请输入0-1200之间的数字");
                 Test4();
                 return;
             }
@@ -174,20 +175,20 @@ class Program
         {
             if (confirm != 1)
             {
-                Console.WriteLine("登记已取消。");
+                Console.WriteLine("登记已取消");
                 Test4();
                 return;
             }
         }
         else
         {
-            Console.WriteLine("输入无效，登记已取消。");
+            Console.WriteLine("输入无效，登记已取消");
             Test4();
             return;
         }
         string entry = $"{name},{age},{address}";
         File.AppendAllText(path, entry + Environment.NewLine);//Environment.NewLine不同系统使用正确的换行符
-        Console.WriteLine("信息已保存到文件。");
+        Console.WriteLine("信息已保存到文件");
         Test4();
     }
 
@@ -255,14 +256,14 @@ class Program
                                     {
                                         if (age < 0 || age > 1200)
                                         {
-                                            Console.WriteLine("年龄输入无效，请输入0-1200之间的数字。");
+                                            Console.WriteLine("年龄输入无效，请输入0-1200之间的数字");
                                             Test4();
                                             return;
                                         }
                                     }
                                     else
                                     {
-                                        Console.WriteLine("请输入有效的数字年龄。");
+                                        Console.WriteLine("请输入有效的数字年龄");
                                         Test4();
                                         return;
                                     }
@@ -339,7 +340,7 @@ class Program
                     }
                     else
                     {
-                        Console.WriteLine("请输入有效的数字ID。");
+                        Console.WriteLine("请输入有效的数字ID");
                     }
                     break;
                 case 2:
